@@ -1,5 +1,5 @@
 int bluePin = 2;    //IN1 on the ULN2003 Board, BLUE end of the Blue/Yellow motor coil
-int pinkPin = 3;    //IN2 on the ULN2003 Board, PINK end of the Pink/Orange motor coil
+int greenPin = 3;    //IN2 on the ULN2003 Board, PINK end of the Pink/Orange motor coil
 int yellowPin = 4;  //IN3 on the ULN2003 Board, YELLOW end of the Blue/Yellow motor coil
 int orangePin = 5;  //IN4 on the ULN2003 Board, ORANGE end of the Pink/Orange motor coil
 
@@ -12,12 +12,12 @@ void setup() {
   Serial.begin(9600);  
   
   pinMode(bluePin, OUTPUT);
-  pinMode(pinkPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
   pinMode(yellowPin, OUTPUT);
   pinMode(orangePin,OUTPUT);
   
   digitalWrite(bluePin, LOW);
-  digitalWrite(pinkPin, LOW);
+  digitalWrite(greenPin, LOW);
   digitalWrite(yellowPin, LOW);
   digitalWrite(orangePin, LOW);
 }
@@ -31,25 +31,25 @@ void loop() {
   switch(currentStep){
     case 0:
       digitalWrite(bluePin, HIGH);
-      digitalWrite(pinkPin, LOW);
+      digitalWrite(greenPin, LOW);
       digitalWrite(yellowPin, LOW);
       digitalWrite(orangePin, LOW);
       break;
     case 1:
       digitalWrite(bluePin, LOW);
-      digitalWrite(pinkPin, HIGH);
+      digitalWrite(greenPin, HIGH);
       digitalWrite(yellowPin, LOW);
       digitalWrite(orangePin, LOW);
       break;
     case 2:
       digitalWrite(bluePin, LOW);
-      digitalWrite(pinkPin, LOW);
+      digitalWrite(greenPin, LOW);
       digitalWrite(yellowPin, HIGH);
       digitalWrite(orangePin, LOW);
       break;
     case 3:
       digitalWrite(bluePin, LOW);
-      digitalWrite(pinkPin, LOW);
+      digitalWrite(greenPin, LOW);
       digitalWrite(yellowPin, LOW);
       digitalWrite(orangePin, HIGH);
       break;
